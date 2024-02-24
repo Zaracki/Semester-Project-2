@@ -1,4 +1,4 @@
-import { getFromLocalStorage } from "../../src/js/utils/localstorage.mjs";
+import { getFromLocalStorage } from "./utils/localstorage.mjs";
 
 /**
  * Makes an HTTP request to a specified URL using the Fetch API.
