@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../dist/css/index.css">
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script type="module" defer src="/src/js/utils/createListing.mjs"></script>
   <title>Document</title>
 </head>
 <body>
@@ -48,25 +49,26 @@
     <div class="container mt-5">
       <div class="card">
           <div class="card-body">
-              <form>
+              <form id="createListingForm">
                   <h2>Create a listing</h2>
                   <div class="form-group">
-                      <label for="name">Name</label>
-                      <input type="text" class="form-control" id="name" placeholder="Enter name">
+                      <label for="listingTitle">Name</label>
+                      <input id="listingTitle" type="text" class="form-control" placeholder="Enter name">
                   </div>
                   <div class="form-group">
-                      <label for="description">Description</label>
-                      <input type="text" class="form-control" id="description" placeholder="Enter description">
+                      <label for="listingContent">Description</label>
+                      <input id="listingContent" type="text" class="form-control" placeholder="Enter description">
                   </div>
                   <div class="form-group">
-                      <label for="image-product">Image</label>
-                      <input type="number" class="form-control" id="image-product" placeholder="Image URL">
+                      <label for="listingMedia">Image</label>
+                      <input id="listingMedia" class="form-control" placeholder="Image URL">
                   </div>
                   <div class="form-group">
-                    <label for="deadline">Deadline</label>
-                    <input type="datetime-local" class="form-control" id="deadline" placeholder="Enter price">
+                    <label for="listingDeadline">Deadline</label>
+                    <input id="listingDeadline" type="datetime-local" class="form-control"placeholder="Enter price">
                 </div>
                   <button type="submit" class="btn btn-primary mt-3">Create</button>
+                  <div id="errorMessage" class="error-message mb-2"></div>
               </form>
           </div>
       </div>

@@ -28,6 +28,7 @@ async function loginUser(user) {
       };
       // Store the user profile in local storage
       addToLocalStorage("userProfile", JSON.stringify(userProfile));
+      addToLocalStorage("accessToken", json.accessToken);
       window.location.href = "../index.html";   
     } else {
       displayErrorMessage("Login failed");

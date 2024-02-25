@@ -22,12 +22,18 @@ export async function refreshFeed() {
     if (posts.ok) {
       postsArray = await posts.json();
       displayPosts(postsArray);
+      sortByNewest();
     } else {
       displayErrorMessage("Could not refresh feed")
     }
   } catch {
     displayErrorMessage("Could not refresh feed");
   }
+}
+
+const searchInputElement = document.getElementById('searchInput');
+if (searchInputElement) {
+    searchInputElement.addEventListener('input', debounce(searchPosts, 1000));
 }
 
 const mySelectElement = document.getElementById('mySelect');
@@ -37,9 +43,36 @@ if (mySelectElement) {
   });
 };
 
-const searchInputElement = document.getElementById('searchInput');
-if (searchInputElement) {
-    searchInputElement.addEventListener('input', debounce(searchPosts, 1000));
+/**
+ * Handles the selection change event on sorting dropdown.
+ * @param {HTMLSelectElement} selection The dropdown select element.
+ */
+
+function onSelected(selection) {
+  let value = selection.value;
+  if (value === 'Newest') {
+    sortByNewest();
+  } else if (value === 'Oldest') {
+    sortByOldest();
+  }
+}
+
+/**
+ * Sorts the posts array by the newest posts.
+ */
+
+function sortByNewest() {
+  postsArray.sort((a, b) => new Date(b.created) - new Date(a.created));
+  displayPosts(postsArray);
+}
+
+/**
+ * Sorts the posts array by the oldest posts.
+ */
+
+function sortByOldest() {
+  postsArray.sort((a, b) => new Date(a.created) - new Date(b.created));
+  displayPosts(postsArray);
 }
 
 function searchPosts() {
