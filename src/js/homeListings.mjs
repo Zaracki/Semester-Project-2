@@ -2,6 +2,7 @@ import { LISTINGS_API_URL } from "../js/constants.mjs";
 import { makeRequest } from "./fetch.mjs";
 import { displayPosts } from "../js/utils/displayListings.mjs";
 import { displayErrorMessage } from "../js/utils/displayError.mjs";
+import { debounce } from "../js/utils/debounce.mjs";
 
 
 let postsArray = [];
@@ -35,5 +36,20 @@ if (mySelectElement) {
     onSelected(this);
   });
 };
+
+const searchInputElement = document.getElementById('searchInput');
+if (searchInputElement) {
+    searchInputElement.addEventListener('input', debounce(searchPosts, 1000));
+}
+
+function searchPosts() {
+  try {
+    const searchText = searchInputElement.value.toLowerCase();
+    const filteredPosts = postsArray.filter(post => post.title.toLowerCase().includes(searchText));
+    displayPosts(filteredPosts);
+  } catch {
+    displayErrorMessage("Error occurred during search.");
+  }
+}
 
 refreshFeed();
