@@ -28,6 +28,10 @@ function generatePostHtml(post) {
   const cardButton = document.createElement("a");
   cardButton.className = "btn btn-primary"
   cardButton.textContent = "View";
+  cardButton.addEventListener("click", () => {
+    window.location.href = `product/?id=${post.id}`;
+  });
+
 
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardDesc);
@@ -37,5 +41,6 @@ function generatePostHtml(post) {
 
   return listingCard;
 };
+
 
 export {generatePostHtml};

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../dist/css/index.css">
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script type="module" defer src="../src/js/singleListing.mjs"></script>
   <title>Document</title>
 </head>
 <body>
@@ -34,8 +35,9 @@
       </div>
     </nav>
   </header>
-  <main>
-    <div class="container">
+  <main id="displaySingleListing">
+    <div class="container" >
+      <div id="errorMessage" class="error-message mt-2"></div>
       <div class="row justify-content-center">
         <img class="custom-image-size" src="../images/Instapost.png">
       </div>
