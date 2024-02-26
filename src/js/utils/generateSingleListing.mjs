@@ -1,4 +1,7 @@
 
+import { updateCountdown } from '../utils/countdownTimer.mjs'; // Import the countdown timer function
+
+
 
 function generateListingHtml(listing) {
   const {id, endsAt, title, description, media, _count} = listing;
@@ -25,6 +28,10 @@ function generateListingHtml(listing) {
   const countdownTime = document.createElement("div");
   countdownTime.className = "card-header";
   countdownTime.textContent = endsAt;
+  
+  const endsAtDate = new Date(endsAt);
+  updateCountdown(endsAtDate, countdownTime);
+
 
   const listingBody = document.createElement("div");
   listingBody.className = "card-body";
@@ -45,9 +52,11 @@ function generateListingHtml(listing) {
 
   const bidInput = document.createElement("input");
   bidInput.className = "form-control rounded card-width";
+  bidInput.placeholder = "Enter your bid amount";
 
   const bidButton = document.createElement("button");
   bidButton.className = "btn btn-outline-primary"
+  bidButton.textContent = "Bid";
 
   bidForm.appendChild(bidInput);
   bidForm.appendChild(bidButton);
