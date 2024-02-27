@@ -73,6 +73,8 @@ function generateListingHtml(listing) {
   parentContainer.appendChild(imageContainer);
   parentContainer.appendChild(listingContain);
 
+  const bidContainer = document.c
+
   return parentContainer;
 };
 
