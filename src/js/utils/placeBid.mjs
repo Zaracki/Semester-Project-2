@@ -27,6 +27,12 @@ async function placeBid(bid) {
     amount: parseFloat(bid)
   }
 
+  const bidSuccess = () => {
+    setTimeout(() => {
+      window.location.reload();
+    }, 5000);
+  };
+
 console.log(body)
   try {
   const myData = await makeRequest(`${LISTINGS_API_URL}/${listingsId}/bids`, {
@@ -35,7 +41,8 @@ console.log(body)
   }, true);
   console.log(myData);
   if (myData.ok) {
-
+    bidSuccess();
+      
   } else {
     
   }
