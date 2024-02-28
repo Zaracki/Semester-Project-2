@@ -7,6 +7,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script type="module" defer src="/src/js/utils/createListing.mjs"></script>
   <script type="module" defer src="/src/js/utils/showProfile.mjs"></script>
+  <script type="module" defer src="/src/js/utils/updateAvatar.mjs"></script>
   <title>Document</title>
 </head>
 <body>
@@ -45,7 +46,7 @@
         <div class="col-12 justify-content-center d-flex">
           <h1 id="profileNameDisplay"></h1>
         </div>
-        <form class="input-group justify-content-center">
+        <form id="avatarForm" class="input-group justify-content-center">
           <input id="avatarUrlInput"type="text" class="form-control rounded" aria-label="Update avatar field" aria-describedby="search-addon" style="max-width: 18rem;" />
           <button id="updateAvatarButton" class="btn btn-outline-primary" data-mdb-ripple-init>Update</button>
         </form>
