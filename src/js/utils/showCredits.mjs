@@ -6,13 +6,16 @@ document.addEventListener("DOMContentLoaded", function() {
   if (userProfile) {
       // Parse JSON string to JavaScript object
       const user = JSON.parse(userProfile);
-      
-      // Update navbar with user credits
-      const creditsDisplay = document.getElementById('creditsDisplay');
-      creditsDisplay.textContent = 'Credits: ' + user.credits;
+    
+      refreshTokenDisplay(user);
   } else {
       // Handle case where user data is not available
       console.log('User data not found in localStorage');
   }
 });
+
+export function refreshTokenDisplay(user) {    
+  const creditsDisplay = document.getElementById('creditsDisplay');
+  creditsDisplay.textContent = 'Credits: ' + user.credits;
+}
 

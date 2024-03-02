@@ -1,10 +1,11 @@
 import { makeRequest } from "../fetch.mjs";
 import { UPDATE_AVATAR_API_URL } from "../constants.mjs";
+import { refreshUser } from "./refreshUserProfile.mjs";
 
 document.addEventListener("DOMContentLoaded", function() {
-  var bidForm = document.getElementById("avatarForm");
+  var avatarField = document.getElementById("avatarForm");
 
-  bidForm.addEventListener("submit", function(event) {
+  avatarField.addEventListener("submit", function(event) {
       event.preventDefault(); 
 
       var avatarUrlInput = document.getElementById("avatarUrlInput");
@@ -37,7 +38,10 @@ console.log(body)
   console.log(myData);
   console.log(nameId);
   if (myData.ok) {
-
+    refreshUser();
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
   } else {
     
   }

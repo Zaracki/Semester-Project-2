@@ -70,6 +70,14 @@ function generateListingHtml(listing) {
   listingContain.appendChild(listingBody);
 
 
+  /*
+  const showBidsContainer = document.createElement("div");
+  showBidsContainer.className = "container";
+
+  const bidsListGroup = document.createElement("ul");
+  bidsListGroup.className = "list-group";
+  */
+
   parentContainer.appendChild(imageContainer);
   parentContainer.appendChild(listingContain);
 

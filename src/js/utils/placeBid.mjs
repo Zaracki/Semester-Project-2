@@ -1,5 +1,6 @@
 import { makeRequest } from "../fetch.mjs";
 import { LISTINGS_API_URL } from "../constants.mjs";
+import { refreshUser } from "./refreshUserProfile.mjs";
 
 document.addEventListener("DOMContentLoaded", function() {
   var bidForm = document.getElementById("bidForm");
@@ -30,7 +31,7 @@ async function placeBid(bid) {
   const bidSuccess = () => {
     setTimeout(() => {
       window.location.reload();
-    }, 5000);
+    }, 500);
   };
 
 console.log(body)
@@ -41,8 +42,8 @@ console.log(body)
   }, true);
   console.log(myData);
   if (myData.ok) {
+    refreshUser();
     bidSuccess();
-      
   } else {
     
   }
