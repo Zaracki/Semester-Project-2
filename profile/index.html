@@ -8,6 +8,8 @@
   <script type="module" defer src="/src/js/utils/createListing.mjs"></script>
   <script type="module" defer src="/src/js/utils/showProfile.mjs"></script>
   <script type="module" defer src="/src/js/utils/updateAvatar.mjs"></script>
+  <script type="module" defer src="/src/js/handlers/checkIfLoggedIn.mjs"></script>
+  <script type="module" defer src="/src/js/handlers/redirectNotLoggedin.mjs"></script>
   <title>SwiftBid - Profile</title>
 </head>
 <body>
@@ -27,7 +29,10 @@
               <a class="nav-link active" href="../login/index.html">Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../login/index.html">Login/Signup</a>
+              <a class="nav-link" id="loginNavbar" href="../login/index.html">Login/Signup</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="logoutNavbar" href="../login/index.html">Logout</a>
             </li>
           </ul>
           <div class="d-flex">
