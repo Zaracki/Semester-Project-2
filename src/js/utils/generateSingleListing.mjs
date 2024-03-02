@@ -68,10 +68,11 @@ function generateListingHtml(listing) {
   listingContain.appendChild(countdownTime);
   listingContain.appendChild(listingBody);
 
-
-  
   const showBidsContainer = document.createElement("div");
   showBidsContainer.className = "container";
+
+  const currentBidsTitle = document.createElement("h2");
+  currentBidsTitle.textContent = "Current bids";
 
   const bidsListGroup = document.createElement("ul");
   bidsListGroup.className = "list-group";
@@ -93,6 +94,7 @@ function generateListingHtml(listing) {
     bidsListGroup.appendChild(bidList);
   });
 
+  showBidsContainer.appendChild(currentBidsTitle);
   showBidsContainer.appendChild(bidsListGroup);
 
   parentContainer.appendChild(imageContainer);
