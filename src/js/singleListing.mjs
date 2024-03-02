@@ -33,7 +33,7 @@ function getIdFromUrl() {
 
 async function getSinglePost(id) {
   try {
-    const data = await makeRequest(`${LISTINGS_API_URL}/${id}`, { method: "GET" }, true);
+    const data = await makeRequest(`${LISTINGS_API_URL}/${id}?_bids=true`, { method: "GET" }, true);
     if (data.ok){
       return await data.json();     
     } else {
@@ -60,6 +60,7 @@ async function generateSinglePost() {
     if (postId) {
       const post = await getSinglePost(postId);
       if (post) {
+        console.log(post)
         const currentSinglePost = generateListingHtml(post);
         resultsContainer.appendChild(currentSinglePost);
       } else {
