@@ -18,7 +18,7 @@ let postsArray = [];
 
 export async function refreshFeed() {
   try {
-    const posts = await makeRequest(LISTINGS_API_URL + "?sort=created", { method: "GET" }, true);
+    const posts = await makeRequest(LISTINGS_API_URL + "?_active=true&sort=created", { method: "GET" }, true);
     if (posts.ok) {
       postsArray = await posts.json();
       displayPosts(postsArray);

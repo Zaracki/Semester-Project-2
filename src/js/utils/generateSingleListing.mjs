@@ -5,6 +5,7 @@ import { updateCountdown } from '../utils/countdownTimer.mjs'; // Import the cou
 
 function generateListingHtml(listing) {
   const {id, endsAt, title, description, media, _count} = listing;
+  
 
   const bidsCount = _count.bids;
 
@@ -19,9 +20,8 @@ function generateListingHtml(listing) {
     productImage.src = media;
     productImage.className = "custom-image-size";
     imageContainer.appendChild(productImage);
-  }
+  } 
   
-
   const listingContain = document.createElement("div");
   listingContain.className = "card bg-light mb-3 mt-3";
 
