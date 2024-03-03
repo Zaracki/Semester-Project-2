@@ -14,6 +14,6 @@ function debounce(func, delay) {
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => func.apply(context, args), delay);
   };
-}
+};
 
 export {  debounce  };

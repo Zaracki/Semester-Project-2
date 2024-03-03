@@ -25,6 +25,6 @@ async function displayPosts(posts) {
   } catch {
     displayErrorMessage("Error displaying post")
   }
-}
+};
 
 export {displayPosts};

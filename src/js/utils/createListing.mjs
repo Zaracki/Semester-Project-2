@@ -30,14 +30,11 @@ export async function handleListingSubmit(event) {
     endsAt: new Date(deadline).toISOString()
   };
 
-  console.log(listingData)
-  console.log(JSON.stringify(listingData))
   try {
     const myData = await makeRequest(LISTINGS_API_URL, {
       method: 'POST',
       body: JSON.stringify(listingData)
     }, true);
-    console.log(myData);
     if (myData.ok) {
       event.target.querySelector("#listingTitle").value = '';
       event.target.querySelector("#listingContent").value = '';
@@ -51,7 +48,7 @@ export async function handleListingSubmit(event) {
   } catch (error) {
     displayErrorMessage("Error creating post: " + error.message);
   }
-}
+};
 
 /**
  * Attaches a submit event listener to the post creation form.

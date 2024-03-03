@@ -35,4 +35,4 @@ export async function makeRequest(
   } catch (error) {
     throw error;
   }
-}
+};

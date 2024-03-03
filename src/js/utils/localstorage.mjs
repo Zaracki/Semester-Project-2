@@ -8,7 +8,7 @@
 
 export function addToLocalStorage(key, value) {
   localStorage.setItem(key, value);
-}
+};
 
 /**
  * Retrieves a value from the local storage by its key.
@@ -18,7 +18,6 @@ export function addToLocalStorage(key, value) {
  * @param {string} key - The key of the value to be retrieved.
  * @returns {string|null} The value from local storage if it exists, or null if it doesn't.
  */
-
 export function getFromLocalStorage(key) {
   return localStorage.getItem(key);
 };
