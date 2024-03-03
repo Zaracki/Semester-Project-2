@@ -20,9 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
       var avatarUrlInput = document.getElementById("avatarUrlInput");
       var imageUrl = avatarUrlInput.value;
 
-      console.log(imageUrl);
       avatarUrlInput.value = "";
-      console.log(imageUrl);
       updateAvatarUrl(imageUrl);
   });
 });

@@ -18,10 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
       var bidAmountInput = document.getElementById("bidAmount");
       var bidAmount = bidAmountInput.value;
 
-      console.log("Bid amount submitted: " + bidAmount);
-      console.log("Form submitted successfully!");
       bidAmountInput.value = "";
-      console.log("bid was" + bidAmount);
       placeBid(bidAmount);
   });
 });
@@ -33,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
  */
 async function placeBid(bid) {
   const listingsId = getListingsId();
-  console.log(listingsId);
 
   const body = {
     amount: parseFloat(bid)
