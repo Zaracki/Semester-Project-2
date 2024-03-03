@@ -3,13 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your profile, add listing.">
   <link rel="stylesheet" href="../dist/css/index.css">
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script type="module" defer src="/src/js/utils/createListing.mjs"></script>
-  <script type="module" defer src="/src/js/utils/showProfile.mjs"></script>
-  <script type="module" defer src="/src/js/utils/updateAvatar.mjs"></script>
-  <script type="module" defer src="/src/js/handlers/checkIfLoggedIn.mjs"></script>
-  <script type="module" defer src="/src/js/handlers/redirectNotLoggedin.mjs"></script>
+  <script type="module" defer src="/src/js/pages/profile/index.mjs"></script>
   <title>SwiftBid - Profile</title>
 </head>
 <body>
@@ -23,10 +20,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+              <a class="nav-link" href="../index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="../login/index.html">Profile</a>
+              <a class="nav-link active" href="../profile/index.html">Profile</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="loginNavbar" href="../login/index.html">Login/Signup</a>
@@ -36,7 +33,7 @@
             </li>
           </ul>
           <div class="d-flex">
-            <p class="me-auto mb-1 text-white">Credits: 1000</p>
+            <p id="creditsDisplay" class="me-auto mb-1 text-white">Credits: 0</p>
           </div>
         </div>
       </div>
@@ -65,19 +62,19 @@
                   <h2>Create a listing</h2>
                   <div class="form-group">
                       <label for="listingTitle">Name</label>
-                      <input id="listingTitle" type="text" class="form-control" placeholder="Enter name">
+                      <input id="listingTitle" type="text" class="form-control" placeholder="Enter name" required>
                   </div>
                   <div class="form-group">
                       <label for="listingContent">Description</label>
-                      <input id="listingContent" type="text" class="form-control" placeholder="Enter description">
+                      <input id="listingContent" type="text" class="form-control" placeholder="Enter description" required>
                   </div>
                   <div class="form-group">
                       <label for="listingMedia">Image</label>
-                      <input id="listingMedia" class="form-control" placeholder="Image URL">
+                      <input id="listingMedia" class="form-control" placeholder="Image URL" required>
                   </div>
                   <div class="form-group">
                     <label for="listingDeadline">Deadline</label>
-                    <input id="listingDeadline" type="datetime-local" class="form-control"placeholder="Enter price">
+                    <input id="listingDeadline" type="datetime-local" class="form-control"placeholder="Enter price" required>
                 </div>
                   <button type="submit" class="btn btn-primary mt-3">Create</button>
               </form>
