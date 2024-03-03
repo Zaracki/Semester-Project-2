@@ -30,7 +30,7 @@ function generateListingHtml(listing) {
     productImage.src = media;
     productImage.className = "custom-image-size";
     imageContainer.appendChild(productImage);
-  } 
+  };
   
   const listingContain = document.createElement("div");
   listingContain.className = "card bg-light mb-3 mt-3";

@@ -37,7 +37,6 @@ async function loginUser(user) {
       window.location.href = "../index.html";   
     } else {
       displayErrorMessage("Login failed");
-      console.log(postBody);
     }
   } catch (error) {
     displayErrorMessage("Login failed");

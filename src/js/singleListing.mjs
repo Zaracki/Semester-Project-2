@@ -17,7 +17,7 @@ function getIdFromUrl() {
     return id;
   }
   return null;
-}
+};
 
 /**
  * Fetches a single post by its ID including its bids.
@@ -38,7 +38,7 @@ async function getSinglePost(id) {
     displayErrorMessage("Error fetching single post")
     return null;
   }
-}
+};
 
 /**
  * Generates the HTML content for a single post and appends it to the results container.
@@ -61,7 +61,7 @@ async function generateSinglePost() {
   } catch {
     displayErrorMessage("Error retriving post")
   }
-}
+};
 
 /**
  * The main entry point of the script. It calls the function to generate and display a single post's content.

@@ -11,6 +11,6 @@ function displayErrorMessage(message) {
   const errorMessageDiv = document.getElementById('errorMessage');
   errorMessageDiv.textContent = message;
   errorMessageDiv.style.display = 'block';
-}
+};
 
 export { displayErrorMessage };

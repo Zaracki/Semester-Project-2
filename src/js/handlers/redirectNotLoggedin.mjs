@@ -15,5 +15,5 @@ function showLoginPage(LoggedIn) {
   if (!LoggedIn) {
     window.location.href = '../login/index.html';
   }
-}
+};
 

@@ -28,12 +28,12 @@ export async function refreshFeed() {
   } catch {
     displayErrorMessage("Could not refresh feed");
   }
-}
+};
 
 const searchInputElement = document.getElementById('searchInput');
 if (searchInputElement) {
     searchInputElement.addEventListener('input', debounce(searchPosts, 1000));
-}
+};
 
 const mySelectElement = document.getElementById('mySelect');
 if (mySelectElement) {
@@ -53,7 +53,7 @@ function onSelected(selection) {
   } else if (value === 'Oldest') {
     sortByOldest();
   }
-}
+};
 
 /**
  * Sorts the posts array by the newest posts.
@@ -61,7 +61,7 @@ function onSelected(selection) {
 function sortByNewest() {
   postsArray.sort((a, b) => new Date(b.created) - new Date(a.created));
   displayPosts(postsArray);
-}
+};
 
 /**
  * Sorts the posts array by the oldest posts.
@@ -69,7 +69,7 @@ function sortByNewest() {
 function sortByOldest() {
   postsArray.sort((a, b) => new Date(a.created) - new Date(b.created));
   displayPosts(postsArray);
-}
+};
 
 function searchPosts() {
   try {
@@ -79,6 +79,6 @@ function searchPosts() {
   } catch {
     displayErrorMessage("Error occurred during search.");
   }
-}
+};
 
 refreshFeed();

@@ -21,7 +21,7 @@ function generatePostHtml(post) {
     image.src = media;
     image.className = "thumbnail-image-size";
     listingCard.appendChild(image);
-  }
+  };
 
   const cardBody = document.createElement("div");
   cardBody.className = "card-body";

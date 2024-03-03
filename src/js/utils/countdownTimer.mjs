@@ -25,6 +25,6 @@ function updateCountdown(endsAtDate, countdownTime) {
   } else {
       cardTitle.textContent = "The event has ended";
   }
-}
+};
 
 export { updateCountdown };
