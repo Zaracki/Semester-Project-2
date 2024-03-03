@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register now at SwiftBid.">
   <link rel="stylesheet" href="../../dist/css/index.css">
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <title>SwiftBid - Register</title>
@@ -19,13 +20,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/login/index.html">Link</a>
+              <a class="nav-link" href="../../profile/index.html">Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link active" id="loginNavbar" href="../login/index.html">Login/Signup</a>
             </li>
           </ul>
         </div>
@@ -38,19 +39,19 @@
           <h1>Welcome, Register Now</h1>
           <div class="form-group mb-2">
             <label for="name">Name</label>
-            <input name="name" type="text" id="name" class="form-control" id="exampleInputEmail1" placeholder="Enter name">
+            <input name="name" type="text" id="name" class="form-control" placeholder="Enter name" required>
           </div>
           <div class="form-group mb-2">
             <label for="email">Email address</label>
-            <input name="email" type="email" id="email" class="form-control" placeholder="Enter email">
+            <input name="email" type="email" id="email" class="form-control" placeholder="Enter email" required>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input name="password" type="password" id="password" class="form-control" placeholder="Create password">
+            <input name="password" type="password" id="password" class="form-control" placeholder="Create password" required>
           </div>
           <div class="form-group">
             <label for="avatar">Avatar</label>
-            <input name="avatar" class="form-control mb-3" id="avatar" placeholder="Enter image URL">
+            <input name="avatar" class="form-control mb-3" id="avatar" placeholder="Enter image URL" required>
           </div>
           <div id="errorMessage" class="mt-2"></div>
           <button type="submit" class="btn btn-primary">Create account</button>
