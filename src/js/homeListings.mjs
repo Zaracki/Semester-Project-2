@@ -15,10 +15,9 @@ let postsArray = [];
  * @returns {Promise<void>} A promise that resolves when the feed is refreshed.
  * @throws {Error} Throws an error if the request fails or if an error occurs in displaying posts.
  */
-
 export async function refreshFeed() {
   try {
-    const posts = await makeRequest(LISTINGS_API_URL + "?sort=created", { method: "GET" }, true);
+    const posts = await makeRequest(LISTINGS_API_URL + "?_active=true&sort=created", { method: "GET" }, true);
     if (posts.ok) {
       postsArray = await posts.json();
       displayPosts(postsArray);
@@ -47,7 +46,6 @@ if (mySelectElement) {
  * Handles the selection change event on sorting dropdown.
  * @param {HTMLSelectElement} selection The dropdown select element.
  */
-
 function onSelected(selection) {
   let value = selection.value;
   if (value === 'Newest') {
@@ -60,7 +58,6 @@ function onSelected(selection) {
 /**
  * Sorts the posts array by the newest posts.
  */
-
 function sortByNewest() {
   postsArray.sort((a, b) => new Date(b.created) - new Date(a.created));
   displayPosts(postsArray);
@@ -69,7 +66,6 @@ function sortByNewest() {
 /**
  * Sorts the posts array by the oldest posts.
  */
-
 function sortByOldest() {
   postsArray.sort((a, b) => new Date(a.created) - new Date(b.created));
   displayPosts(postsArray);

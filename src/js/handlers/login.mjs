@@ -5,6 +5,15 @@ import { displayErrorMessage } from "../utils/displayError.mjs";
 
 const form = document.querySelector("#loginForm");
 
+/**
+ * Attempts to log in a user using provided credentials.
+ * Sends a POST request to the login API with the user's credentials. If successful,
+ * the user's profile data and access token are stored in local storage, and the user is redirected to the homepage.
+ * Displays an error message if login fails.
+ *
+ * @async
+ * @param {Object} user - An object containing the user's login credentials.
+ */
 async function loginUser(user) {
   try {
     const postBody = JSON.stringify(user);
@@ -16,9 +25,6 @@ async function loginUser(user) {
     );
     if (myData.ok) {
       const json = await myData.json();
-      const token = json.accessToken;
-      const username = json.name;
-      // Assuming the API response includes the user profile details
       const userProfile = {
         name: json.name,
         email: json.email,
@@ -26,7 +32,6 @@ async function loginUser(user) {
         avatar: json.avatar,
         accessToken: json.accessToken,
       };
-      // Store the user profile in local storage
       addToLocalStorage("userProfile", JSON.stringify(userProfile));
       addToLocalStorage("accessToken", json.accessToken);
       window.location.href = "../index.html";   
@@ -39,6 +44,11 @@ async function loginUser(user) {
   }
 };
 
+/**
+ * Adds an event listener to the login form to handle the submit event.
+ * Prevents the default form submission, collects the form data into a user object,
+ * and then calls the loginUser function with the collected data.
+ */
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const formData = new FormData(event.target);

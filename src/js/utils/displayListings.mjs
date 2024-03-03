@@ -13,7 +13,6 @@ const postsContainer = document.querySelector("#posts-display");
  * @param {Array} posts - An array of post objects to be displayed.
  * @throws {Error} Throws an error if there is a problem in displaying posts.
  */
-
 async function displayPosts(posts) {
   try {
     if (postsContainer) {
