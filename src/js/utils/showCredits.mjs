@@ -1,21 +1,25 @@
+import { displayErrorMessage } from "./displayError.mjs";
+
+/**
+ * Attaches an event listener to the DOMContentLoaded event to initialize the refresh token display.
+ */
 document.addEventListener("DOMContentLoaded", function() {
-  // Retrieve user data from localStorage
   const userProfile = localStorage.getItem('userProfile');
 
-  // Check if userProfile exists
   if (userProfile) {
-      // Parse JSON string to JavaScript object
       const user = JSON.parse(userProfile);
     
       refreshTokenDisplay(user);
   } else {
-      // Handle case where user data is not available
-      console.log('User data not found in localStorage');
+      displayErrorMessage("Error showing credits");
   }
 });
 
+/**
+ * Updates the display of user credits.
+ * @param {Object} user - The user object containing the user's data.
+ */
 export function refreshTokenDisplay(user) {    
   const creditsDisplay = document.getElementById('creditsDisplay');
   creditsDisplay.textContent = 'Credits: ' + user.credits;
-}
-
+};

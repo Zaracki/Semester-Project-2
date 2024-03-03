@@ -1,4 +1,10 @@
 
+import { displayErrorMessage } from "./displayError.mjs";
+
+/**
+ * Attaches an event listener to the DOMContentLoaded event. Once the DOM is fully loaded, it retrieves the user's profile from localStorage.
+ * If a user profile exists, it updates the DOM elements with the user's name and avatar. If no profile is found, logs a message to the console.
+ */
 document.addEventListener("DOMContentLoaded", function() {
   const userProfile = localStorage.getItem('userProfile');
 
@@ -14,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
       avatarUrlInput.value = user.avatar;
 
   } else {
-      console.log('User data not found in localStorage');
+      displayErrorMessage("Error has occurred")
   }
 });
 
