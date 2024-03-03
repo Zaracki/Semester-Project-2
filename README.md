@@ -13,6 +13,9 @@ SwiftBid is an auction site where you can post and bid on items. On register you
 * Made with: Javascript, VSCode, CSS, Bootstrap, HTML, SCSS. 
 
 ## Installation
+
+Clone Repo
+
 ```
 npm install
 ```
