@@ -10,8 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
       const user = JSON.parse(userProfile);
     
       refreshTokenDisplay(user);
-  } else {
-      displayErrorMessage("Error showing credits");
   }
 });
 
