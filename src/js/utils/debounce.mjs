@@ -6,7 +6,6 @@
  * @param {number} delay - The number of milliseconds to delay.
  * @returns {Function} A new debounced function.
  */
-
 function debounce(func, delay) {
   let debounceTimer;
   return function() {

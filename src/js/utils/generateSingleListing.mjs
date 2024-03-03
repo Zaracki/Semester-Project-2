@@ -1,10 +1,21 @@
-
 import { updateCountdown } from '../utils/countdownTimer.mjs'; // Import the countdown timer function
 
-
-
+/**
+ * Generates HTML content for a given listing, including its image, title, description,
+ * countdown to the listing's end date, and current bids.
+ *
+ * @param {Object} listing - The listing object containing all necessary data to populate the HTML.
+ * @param {string} listing.endsAt - The end date and time for the listing.
+ * @param {string} listing.title - The title of the listing.
+ * @param {string} listing.description - The description of the listing.
+ * @param {string} listing.media - The URL to the listing's media image.
+ * @param {Object} listing._count - An object containing various counts related to the listing.
+ * @param {number} listing._count.bids - The number of bids for the listing.
+ * @param {Array} listing.bids - An array of bid objects related to the listing.
+ * @returns {HTMLElement} The parent container element populated with the listing's information.
+ */
 function generateListingHtml(listing) {
-  const {id, endsAt, title, description, media, _count, bids} = listing;
+  const {endsAt, title, description, media, _count, bids} = listing;
   
   const bidsCount = _count.bids;
 
@@ -88,6 +99,5 @@ function generateListingHtml(listing) {
 
   return parentContainer;
 };
-
 
 export {generateListingHtml};

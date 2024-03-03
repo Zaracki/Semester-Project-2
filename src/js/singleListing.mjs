@@ -52,7 +52,6 @@ async function generateSinglePost() {
     if (postId) {
       const post = await getSinglePost(postId);
       if (post) {
-        console.log(post)
         const currentSinglePost = generateListingHtml(post);
         resultsContainer.appendChild(currentSinglePost);
       } else {
