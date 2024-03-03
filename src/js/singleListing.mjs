@@ -7,11 +7,9 @@ const resultsContainer = document.querySelector("#displaySingleListing");
 
 /**
  * Extracts the post ID from the current URL's query parameters.
- *
- * @function getIdFromUrl
- * @returns {string|null} The post ID if present in the URL, otherwise null.
+ * 
+ * @returns {string|null} The ID of the post if present in the URL; otherwise, null.
  */
-
 function getIdFromUrl() {
   const searchParams = new URLSearchParams(window.location.search);
   const id = searchParams.get("id");
@@ -22,15 +20,12 @@ function getIdFromUrl() {
 }
 
 /**
- * Fetches a single post's data from the server using its ID.
- *
+ * Fetches a single post by its ID including its bids.
+ * 
+ * @param {string} id - The unique identifier of the post.
+ * @returns {Promise<Object|null>} A promise that resolves to the post data as an object if the request is successful; otherwise, null.
  * @async
- * @function getSinglePost
- * @param {string} id - The ID of the post to fetch.
- * @returns {Promise<Object|null>} The post data as an object if successful, null otherwise.
- * @throws {Error} Displays an error message if fetching the post fails.
  */
-
 async function getSinglePost(id) {
   try {
     const data = await makeRequest(`${LISTINGS_API_URL}/${id}?_bids=true`, { method: "GET" }, true);
@@ -46,21 +41,17 @@ async function getSinglePost(id) {
 }
 
 /**
- * Generates and displays the HTML for a single post.
- * Retrieves the post data based on the ID obtained from the URL and uses it to generate the HTML.
- *
+ * Generates the HTML content for a single post and appends it to the results container.
+ * It retrieves the post ID from the URL, fetches the post data, and uses a utility function to generate the HTML.
+ * 
  * @async
- * @function generateSinglePost
- * @throws {Error} Displays an error message if there are issues in retrieving or displaying the post.
  */
-
 async function generateSinglePost() {
   try {
     const postId = getIdFromUrl();
     if (postId) {
       const post = await getSinglePost(postId);
       if (post) {
-        console.log(post)
         const currentSinglePost = generateListingHtml(post);
         resultsContainer.appendChild(currentSinglePost);
       } else {
@@ -73,12 +64,8 @@ async function generateSinglePost() {
 }
 
 /**
- * Main function to be executed when the script loads.
- * Initiates the process of fetching and displaying a single post.
- *
- * @function main
+ * The main entry point of the script. It calls the function to generate and display a single post's content.
  */
-
 function main() {
   generateSinglePost();
 }

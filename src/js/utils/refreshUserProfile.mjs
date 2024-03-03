@@ -4,6 +4,17 @@ import { addToLocalStorage } from "../utils/localstorage.mjs";
 
 const userProfile = localStorage.getItem('userProfile');
 
+/**
+ * Refreshes the user profile data by fetching updated information from the server.
+ * This function retrieves the user's latest profile data, including name, email, credits, and avatar,
+ * and updates the local storage with the new data.
+ * 
+ * @async
+ * @export
+ * @function refreshUser
+ * @param {Object} user - The user object to refresh. This parameter is not used in the function and can be removed.
+ * @throws Displays an error message if there is a problem with fetching or updating the user profile data.
+ */
 export async function refreshUser(user) {
   try {
     const user = JSON.parse(userProfile);

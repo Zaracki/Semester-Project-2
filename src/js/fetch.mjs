@@ -12,7 +12,6 @@ import { getFromLocalStorage } from "./utils/localstorage.mjs";
  * @returns {Promise<Response>} A promise that resolves with the response of the fetch request.
  * @throws {Error} Propagates any errors that occur during the request.
  */
-
 export async function makeRequest(
   url, 
   options = {method: "POST"},
