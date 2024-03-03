@@ -8,6 +8,8 @@
   <script type="module" defer src="../src/js/singleListing.mjs"></script>
   <script type="module" defer src="/src/js/utils/showCredits.mjs"></script>
   <script type="module" defer src="../src/js/utils/placeBid.mjs"></script>
+  <script type="module" defer src="../../src/js/handlers/checkIfLoggedIn.mjs"></script>
+  <script type="module" defer src="/src/js/handlers/redirectNotLoggedin.mjs"></script>
   <title>SwiftBid - Listing</title>
 </head>
 <body>
@@ -38,7 +40,8 @@
     </nav>
   </header>
   <main id="displaySingleListing">
-    <form id="bidForm" class="input-group">
+    <h1 class="justify-content-center d-flex">Place your bid</h1>
+    <form id="bidForm" class="input-group justify-content-center">
       <input id="bidAmount" name="bidAmount" type="number" class="form-control rounded" placeholder="Place bid" aria-label="Place bid" aria-describedby="search-addon" style="max-width: 18rem;" />
       <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-init>Bid</button>
     </form>

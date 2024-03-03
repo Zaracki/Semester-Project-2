@@ -46,24 +46,9 @@ function generateListingHtml(listing) {
   const currentBid = document.createElement("p");
   currentBid.textContent = `Bids: ${bidsCount}`;
 
-  const bidForm = document.createElement("div");
-  bidForm.className = "input-group";
-
-  const bidInput = document.createElement("input");
-  bidInput.className = "form-control rounded card-width";
-  bidInput.placeholder = "Enter your bid amount";
-
-  const bidButton = document.createElement("button");
-  bidButton.className = "btn btn-outline-primary"
-  bidButton.textContent = "Bid";
-
-  bidForm.appendChild(bidInput);
-  bidForm.appendChild(bidButton);
-
   listingBody.appendChild(listingTitle);
   listingBody.appendChild(listingDescription);
   listingBody.appendChild(currentBid);
-  listingBody.appendChild(bidForm);
 
   listingContain.appendChild(countdownTime);
   listingContain.appendChild(listingBody);
