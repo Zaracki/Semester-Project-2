@@ -1,17 +1,37 @@
-# Semester-Project-2
+# Swiftbid - Semester project 2
 
+![image](images/Swiftbid.png)
 
-## Description
-SwiftBid is an auction site where you can post and bid on items. On register you will have 1000 Credits you can use to win bids on different listings made by other users.
+This is my delivery on my Semester Project 2 where you can list and bid on items.
 
-### Features
-- **User Registration**: Sign up to begin your SwiftBid journey and receive 1000 Credits.
-- **Login System**: Secure login functionality to access your SwiftBid account.
-- **Auction Listings**: View a wide range of item listings to bid on.
-- **Create Listings**: Create listings for others to bid on.
-- **Created with**: Built with Javascript, HTML, CSS (with SCSS for styling), and Bootstrap for responsive design, using the Noroff Auction API v1.
+## Assignement
 
-## Installation
+An auction site is looking to launch a website where users can add items to be bid on and bid on items other users have put up for auction.
+
+When a new user joins the website, they are given 1000 credits to use on the site. They can get credits by selling items and use credit by buying items. Non-registered users can search through the listings, but only registered users can make bids on listings.
+
+### Points
+
+- A user with a stud.noroff.no email may register
+- A registered user may login
+- A registered user may logout
+- A registered user may update their avatar
+- A registered user may view their total credit
+- A registered user may create a Listing with a title, deadline date, media gallery and description
+- A registered user may add a Bid to another user’s Listing
+- A registered user may view Bids made on a Listing
+- An unregistered user may search through Listings
+
+## Built With
+
+You can list a the tech stack that you've used over here
+
+- Javascript
+- Bootstrap
+
+## Getting Started
+
+### Installing
 
 First, clone the repository to your local machine:
 
@@ -23,10 +43,10 @@ npm install
 npm run build
 ```
 
-## Contribution
-Contributions to SwiftBid are welcome! If you're looking to contribute:
+## Contributing
 
-Fork the Repository: Create your own fork of the project.
-Make Your Changes: Implement your changes or improvements in your forked version.
-Pull Request: Submit a pull request with a comprehensive description of your changes.
-Please ensure your pull requests are detailed and include explanations of your changes or additions.
+If you find any issues or make any improvments you can make a pull request or contact me using the contact information provided on my profile.
+
+## Contact
+
+[My Github](https://github.com/Zaracki)
